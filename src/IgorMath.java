@@ -26,55 +26,38 @@ public class IgorMath {
             System.out.println("Kennen Sie die Antwort?");
             long startTime = System.currentTimeMillis();
 
-            String antwort = new Scanner(System.in).nextLine();
-            while (antwort.isEmpty() || antwort.isBlank()) {
 
-                System.out.println("Kennen Sie die Antwort?");
-                System.out.println("Ihre Antowrt bitte:  ");
-                antwort = new Scanner(System.in).nextLine();
-            }
+            long endTime = System.currentTimeMillis();
+            Integer result = new Scanner(System.in).nextInt();
 
-            if (antwort.equals("ja")) {
-                long endTime = System.currentTimeMillis();
-                Integer result = new Scanner(System.in).nextInt();
+            if (result == addNumbers(zahl1, zahl2)) {
 
-                if (result == addNumbers(zahl1, zahl2)) {
-
-                    System.out.println("Bravo!" +
-                            "\nÜbrigens war Ihre Denkzeit für die Aufgabe " + (endTime - startTime) / 1000 + " Sekunde(n).");
-
-                } else {
-                    System.out.println("Leider nicht! Richige Antwort war " + (zahl1 + zahl2));
-                    System.out.println("Probiere es noch einmal!");
-
-
-                    //addierenWirNeRunde();
-                }
-
+                System.out.println("Bravo!" +
+                        "\nÜbrigens war Ihre Denkzeit für die Aufgabe " + (endTime - startTime) / 1000 + " Sekunde(n).");
 
             } else {
-                System.out.println("Ihre eingabe verstehe ich nicht!");
-                System.out.println("Probieren Sie noch einmal");
-                antwort = new Scanner(System.in).nextLine();
+                System.out.println("Leider nicht! Richige Antwort war " + (zahl1 + zahl2));
+                System.out.println("Probiere es noch einmal!");
 
+                //addierenWirNeRunde();
             }
 
 
-//            System.out.println(" \nNoch eine Runde addieren?");
-//
-//            String antwort2 = new Scanner(System.in).nextLine();
-//            while (antwort2.isEmpty() && antwort2.isBlank()) {
-//
-//                System.out.println(" \nNoch eine Runde addieren?");
-//                System.out.println("Ihre Antowrt bitte:  ");
-//                antwort2 = new Scanner(System.in).nextLine();
-//            }
-//
-//            if (antwort2.equals("ja")) {
-//                addierenWirNeRunde();
-//            } else {
-//                Main.gameMenue();
-//            }
+            System.out.println(" \nNoch eine Runde addieren?");
+
+            String antwort2 = new Scanner(System.in).nextLine();
+            while (antwort2.isEmpty() && antwort2.isBlank()) {
+
+                System.out.println(" \nNoch eine Runde addieren?");
+                System.out.println("Ihre Antowrt bitte:  ");
+                antwort2 = new Scanner(System.in).nextLine();
+            }
+
+            if (antwort2.equals("ja")) {
+                addierenWirNeRunde();
+            } else {
+                Main.gameMenue();
+            }
         }
 
     }
