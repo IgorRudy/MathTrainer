@@ -2,8 +2,17 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        menue();
+        try {
+            menue();
+        }catch (Exception e){
+
+            System.out.println("Etwas ist schief gelaufen: " + e);
+
+        }
+
+
     }
+
     public static void menue(){
         while(true){
 

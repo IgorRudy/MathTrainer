@@ -47,6 +47,7 @@ public class IgorMath {
 
             System.out.println(" \nNoch eine Runde addieren?");
             System.out.println("(Counter Wert -> " + counter + ")");
+            System.out.println("(Max_Zahl Wert -> " + MAX_ZAHL + ")");
 
             String antwort2 = new Scanner(System.in).nextLine();
             while (antwort2.isEmpty() && antwort2.isBlank()) {
