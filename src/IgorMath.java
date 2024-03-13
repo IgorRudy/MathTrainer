@@ -15,6 +15,9 @@ public class IgorMath {
             if (counter % MAX_RUNDEN_PRO_RAUM == 0) {
                 MAX_ZAHL += 10;
             }
+            if (counter > MAX_RUNDEN_PRO_RAUM){
+                counter = 0;
+            }
 
             System.out.println("Hier die Aufgabe:");
 
@@ -30,12 +33,14 @@ public class IgorMath {
             if (result == addNumbers(zahl1, zahl2)) {
                 long endTime = System.currentTimeMillis();
                 System.out.println("Bravo!" +
-                        "\nÜbrigens war Ihre Denkzeit für die Aufgabe " + (endTime - startTime) / 1000 + " Sekunde(n).");
+                        gameReport(startTime, endTime));
 
             } else {
                 System.out.println("Leider nicht! Richige Antwort war " + (zahl1 + zahl2));
                 System.out.println("Probiere es noch einmal!");
-                counter --;
+                if(counter > 0){
+                    counter --;
+                }
 
                 //addierenWirNeRunde();
             }
@@ -58,6 +63,11 @@ public class IgorMath {
             }
         }
     }
+
+    private static String gameReport(long startTime, long endTime) {
+        return "\nÜbrigens war Ihre Denkzeit für die Aufgabe " + (endTime - startTime) / 1000 + " Sekunde(n).";
+    }
+
     public static int randomizer(int range) {
         Random randomNumber = new Random();
         return randomNumber.nextInt(range);

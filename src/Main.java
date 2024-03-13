@@ -8,7 +8,7 @@ public class Main {
         while(true){
 
             System.out.println("Hallo!" +
-                    "Wollen wir ein wenig Mathe üben?");
+                    "Wollen wir ein wenig Kopfrechnen üben?");
             String antwort = new Scanner(System.in).nextLine();
             if (antwort.equals("ja")){
                 gameMenue();
